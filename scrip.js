@@ -1,4 +1,5 @@
-// Task 1 - Online Store Discount
+
+ // Task 1 - Online Store Discount
 
 function calculateDiscount(price, discount) {
     return price - (price * discount / 100);
@@ -12,9 +13,11 @@ function checkPrice(price) {
     }
 }
 
-const finalPrice = calculateDiscount(200, 20);
-console.log(finalPrice);
-console.log(checkPrice(finalPrice));
+function task1() {
+    const finalPrice = calculateDiscount(200, 20);
+
+    document.getElementById("result1").textContent = finalPrice + " - " + checkPrice(finalPrice);
+}
 
 
 // Task 2 - Game Player Status
@@ -37,8 +40,9 @@ function getPlayerInfo(name, level) {
     return name + " - Level " + level;
 }
 
-console.log(getPlayerInfo(player.name, player.level));
-console.log(getPlayerHealth(player.health));
+function task2() {
+    document.getElementById("result2").textContent = getPlayerInfo(player.name, player.level) + " | " + getPlayerHealth(player.health);
+}
 
 
 // Task 3 - Restaurant Order
@@ -53,10 +57,12 @@ function createOrder(food, drink) {
     return "Your order: " + food + " + " + drink;
 }
 
-const food = getFood(menu, 0);
-const drink = getFood(menu, 3);
+function task3() {
+    const food = getFood(menu, 0);
+    const drink = getFood(menu, 3);
 
-console.log(createOrder(food, drink));
+    document.getElementById("result3").textContent = createOrder(food, drink);
+}
 
 
 // Task 4 - Student Result
@@ -78,9 +84,11 @@ function createStudentResult(name, result) {
     return name + ": " + result;
 }
 
-const result = checkScore(student.score);
+function task4() {
+    const result = checkScore(student.score);
 
-console.log(createStudentResult(student.name, result));
+    document.getElementById("result4").textContent = createStudentResult(student.name, result);
+}
 
 
 // Task 5 - Travel Budget
@@ -103,7 +111,11 @@ function checkDailyBudget(dailyBudget) {
     }
 }
 
-const dailyBudget = calculateDailyBudget(trip.budget, trip.days);
+function task5() {
+    const dailyBudget = calculateDailyBudget(
+        trip.budget,
+        trip.days
+    );
 
-console.log(dailyBudget);
-console.log(checkDailyBudget(dailyBudget));
+    document.getElementById("result5").textContent = dailyBudget + " - " + checkDailyBudget(dailyBudget);
+}
